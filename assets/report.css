@@ -147,9 +147,12 @@ button.kpi-card:focus-visible {
 .kpi-card { min-height: 128px; padding: 18px; position: relative; text-align: left; transition: transform .2s ease, box-shadow .2s ease; }
 button.kpi-card { width: 100%; font: inherit; color: inherit; border: 1px solid var(--line); background: white; }
 button.kpi-card:hover { transform: translateY(-3px); box-shadow: 0 28px 60px -34px rgba(0,143,206,.5); }
-.kpi-label { display: block; min-height: 30px; color: var(--muted); font-size: 9.5px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
-.kpi-value { display: block; font-size: clamp(25px, 2.9vw, 40px); line-height: 1.05; font-weight: 900; letter-spacing: -.03em; }
-.kpi-detail { display: block; margin-top: 7px; color: var(--muted); font-size: 10.5px; }
+.kpi-label { display: block; min-height: 30px; color: var(--muted); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }
+/* overflow-wrap: garante que um valor formatado mais largo que o card (número de muitos dígitos,
+   moeda negativa) quebre linha em vez de ser cortado silenciosamente pelo overflow:hidden do
+   .card — a métrica exata de uma fonte de fallback (Arial/Fivo Sans) varia por SO/navegador. */
+.kpi-value { display: block; font-size: clamp(24px, 2.7vw, 38px); line-height: 1.12; font-weight: 900; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.kpi-detail { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; font-weight: 700; }
 .kpi-spark { display: block; margin-top: 6px; color: var(--muted); }
 .trend-up { color: var(--good); } .trend-down { color: var(--bad); } .trend-flat { color: var(--warn-text); }
 
@@ -164,10 +167,10 @@ button.kpi-card:hover { transform: translateY(-3px); box-shadow: 0 28px 60px -34
 
 .bar-list { display: grid; gap: 12px; }
 .bar-row { display: grid; grid-template-columns: minmax(140px, .65fr) 2fr minmax(85px,.35fr); align-items: center; gap: 12px; }
-.bar-label { font-size: 11px; font-weight: 800; overflow-wrap: anywhere; }
+.bar-label { font-size: 13px; font-weight: 800; overflow-wrap: anywhere; }
 .bar-track { height: 13px; background: var(--cream); border-radius: 999px; overflow: hidden; }
 .bar-fill { height: 100%; width: var(--width); background: linear-gradient(90deg, var(--azul), var(--ciano)); border-radius: inherit; min-width: 2px; }
-.bar-value { font-size: 10px; font-weight: 800; text-align: right; }
+.bar-value { font-size: 12px; font-weight: 800; text-align: right; }
 .progress { height: 20px; border-radius: 999px; background: var(--cream); overflow: hidden; border: 1px solid var(--line); }
 .progress > span { display: block; height: 100%; width: min(var(--progress), 100%); background: linear-gradient(90deg, var(--azul), var(--ciano)); }
 
@@ -197,7 +200,7 @@ details[open] summary::after { content: '−'; }
 .score-ring::before { content: ''; position: absolute; inset: 16px; border-radius: 50%; background: white; }
 .score-ring strong { position: relative; font-size: 42px; letter-spacing: -.04em; color: var(--ink); }
 .score-ring strong small { font-size: 13px; color: var(--muted); }
-.health-row { display: grid; grid-template-columns: 150px 1fr 55px; align-items: center; gap: 10px; margin: 10px 0; font-size: 10px; font-weight: 800; }
+.health-row { display: grid; grid-template-columns: 160px 1fr 55px; align-items: center; gap: 10px; margin: 10px 0; font-size: 12px; font-weight: 800; }
 
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
 .filters label { display: grid; gap: 4px; color: var(--muted); font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }

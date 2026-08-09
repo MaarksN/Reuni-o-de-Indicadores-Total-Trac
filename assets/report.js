@@ -4,7 +4,11 @@
   try {
   const data = window.TOTALTRAC_DATA;
   if (!data) throw new Error('window.TOTALTRAC_DATA ausente — assets/report-data.js não carregou.');
-  const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  const brlFormatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+  // Hífen não-quebrável (U+2011) no lugar do sinal de menos: por padrão o navegador trata "-" como
+  // ponto de quebra de linha válido (UAX#14) e pode isolar "-" numa linha e "R$ 1.234,56" na
+  // seguinte quando o card é estreito — mesmo texto, mesma largura, só não quebra mais ali.
+  const brl = { format: (value) => brlFormatter.format(value).replace('-', '‑') };
   const int = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 0 });
   const one = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[char]));
