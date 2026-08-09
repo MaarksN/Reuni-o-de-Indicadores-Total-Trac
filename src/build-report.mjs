@@ -51,7 +51,7 @@ const html = `<!doctype html>
   </main>
   <footer class="presentation-footer">
     <button id="prevButton" type="button">← Página anterior</button>
-    <span id="pageIndicator" aria-live="polite">Página 01 de 20</span>
+    <span id="pageIndicator" aria-live="polite">Página 01 de 19</span>
     <button id="nextButton" type="button">Próxima página →</button>
   </footer>
   <aside id="drawer" class="drawer" aria-hidden="true" aria-labelledby="drawerTitle">
