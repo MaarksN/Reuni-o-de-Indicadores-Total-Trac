@@ -156,6 +156,20 @@ button.kpi-card:hover { transform: translateY(-3px); box-shadow: 0 28px 60px -34
 .kpi-spark { display: block; margin-top: 6px; color: var(--muted); }
 .trend-up { color: var(--good); } .trend-down { color: var(--bad); } .trend-flat { color: var(--warn-text); }
 
+/* Celebração de meta batida — só nos cards de saldo/gap quando >=0, dispara uma vez no
+   carregamento (ver report.js), nunca em loop. Sem prefers-reduced-motion, as peças de confete
+   nunca ganham a animação — só o selo "Meta batida!" fica visível, sempre estático. */
+.confetti { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.confetti-piece { position: absolute; top: -10px; width: 6px; height: 10px; border-radius: 1px; opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .celebrate-play .confetti-piece { animation: confetti-fall 1.4s ease-out forwards; }
+}
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(95px) rotate(340deg); opacity: 0; }
+}
+.congrats-badge { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; padding: 3px 8px; border-radius: 999px; background: #edf8f0; color: var(--good); font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
+
 .section-title { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 26px 0 12px; padding-left: 13px; border-left: 5px solid var(--ciano); }
 .section-title h2 { margin: 0; color: var(--azul-text); font-size: 15px; text-transform: uppercase; letter-spacing: .02em; }
 .section-title span { color: var(--muted); font-size: 10px; }
