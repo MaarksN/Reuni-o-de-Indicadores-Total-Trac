@@ -190,11 +190,11 @@ button.kpi-card:hover { transform: translateY(-3px); box-shadow: 0 28px 60px -34
 
 .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); background: white; box-shadow: var(--shadow); }
 table { width: 100%; border-collapse: collapse; min-width: 720px; }
-th, td { padding: 11px 13px; text-align: left; border-bottom: 1px solid var(--line); font-size: 10.5px; vertical-align: top; }
-th { position: sticky; top: 0; z-index: 1; background: var(--cream); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; font-size: 9px; }
+th, td { padding: 11px 13px; text-align: left; border-bottom: 1px solid var(--line); font-size: 12px; vertical-align: top; }
+th { position: sticky; top: 0; z-index: 1; background: var(--cream); color: var(--muted); text-transform: uppercase; letter-spacing: .05em; font-size: 11px; }
 tbody tr:hover { background: #f4fafd; }
 .numeric { text-align: right; font-variant-numeric: tabular-nums; }
-.badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 8px; background: var(--cream); color: var(--ink); font-size: 8.5px; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
+.badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 8px; background: var(--cream); color: var(--ink); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .04em; }
 .badge.good { color: var(--good); background: #edf8f0; } .badge.warn { color: var(--warn-text); background: #fff8df; } .badge.bad { color: var(--bad); background: #fff0ee; }
 
 details { background: white; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
@@ -215,7 +215,7 @@ details[open] summary::after { content: '−'; }
 .company-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 10px; }
 .company-card { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--paper); }
 .company-card strong { display: block; margin-bottom: 4px; font-size: 11px; }
-.company-card span { display: block; color: var(--muted); font-size: 9.5px; }
+.company-card span { display: block; color: var(--muted); font-size: 11px; }
 
 .score-ring { --score: 50; width: 190px; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--ciano) calc(var(--score) * 1%), var(--cream) 0); position: relative; }
 .score-ring::before { content: ''; position: absolute; inset: 16px; border-radius: 50%; background: white; }
@@ -230,7 +230,7 @@ details[open] summary::after { content: '−'; }
 .compare-row b { font-weight: 900; font-size: 16px; }
 
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
-.filters label { display: grid; gap: 4px; color: var(--muted); font-size: 8px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }
+.filters label { display: grid; gap: 4px; color: var(--muted); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }
 .filters select { min-width: 175px; border: 1px solid var(--line); border-radius: 10px; background: white; padding: 9px 10px; color: var(--ink); }
 
 /* Anunciado via aria-live quando um filtro muda a lista — texto curto, não a grade inteira. */
@@ -267,7 +267,7 @@ body.mode-report .presentation-footer { opacity: .84; }
 .drawer h2 { margin: 0 0 18px; }
 .drawer-record { padding: 12px 0; border-bottom: 1px solid var(--line); }
 .drawer-record strong { display: block; font-size: 11px; }
-.drawer-record span { color: var(--muted); font-size: 9.5px; }
+.drawer-record span { color: var(--muted); font-size: 11px; }
 
 @media (max-width: 980px) {
   .grid-5, .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
