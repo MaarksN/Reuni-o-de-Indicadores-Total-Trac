@@ -190,7 +190,7 @@
     const porTipo = Object.entries(group(items, 'tipoContrato')).map(([tname, titems]) => [tname, sum(titems, 'mensalidade'), `${titems.length} venda(s)`]).sort((a, b) => b[1] - a[1]);
     return `<details><summary><span>${esc(name)}</span><span>${items.length} venda(s) · ${brl.format(sum(items, 'mensalidade'))}</span></summary><div class="details-body"><h3>Por vendedor</h3>${bars(porVendedor, brl.format.bind(brl))}<h3 class="mt-16">Por tipo de contrato</h3>${bars(porTipo, brl.format.bind(brl))}</div></details>`;
   }).join('');
-  pages.push(page(13, 'Produtos', `Todas as Vendas de ${referenceMonth}`, `${julho.length} vendas de ${referenceMonth.toLowerCase()} organizadas por produto; abra um produto para ver a repartição por vendedor e por tipo de contrato.`, `${produtoDetails}${source('Docs/vendas-2026.json — todas as linhas de ' + referenceMonth)}`));
+  pages.push(page(13, 'Produtos', `Todas as Vendas de ${referenceMonth}`, `${julho.length} vendas de ${referenceMonth.toLowerCase()} organizadas por produto; abra um produto para ver a repartição por vendedor e por tipo de contrato.`, `<div class="grid grid-4 product-details-grid">${produtoDetails}</div>${source('Docs/vendas-2026.json — todas as linhas de ' + referenceMonth)}`));
 
   const clienteRows = Object.entries(clienteGroups).map(([name, items]) => ({
     name, count: items.length, mensalidade: sum(items, 'mensalidade'), adesao: sum(items, 'adesao'), total: sum(items, 'mensalidade') + sum(items, 'adesao'), novo: items.some((item) => item.tipoVenda === 'Novo'),

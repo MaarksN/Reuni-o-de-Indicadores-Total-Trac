@@ -200,6 +200,13 @@ tbody tr:hover { background: #f4fafd; }
 details { background: white; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
 details + details { margin-top: 10px; }
 summary { cursor: pointer; padding: 14px 16px; font-size: 11px; font-weight: 900; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+/* Grid de cards de produto (4 por fileira): gap do grid já espaça as linhas, então zera o
+   margin-top pensado para a pilha vertical padrão de <details>. align-items:start impede que
+   abrir um produto estique os cards fechados vizinhos na mesma fileira. Resumo empilhado
+   (nome em cima, número embaixo) porque a coluna fica estreita para nome + número lado a lado. */
+.product-details-grid { align-items: start; }
+.product-details-grid details + details { margin-top: 0; }
+.product-details-grid summary { flex-direction: column; align-items: flex-start; gap: 4px; }
 summary::-webkit-details-marker { display: none; }
 summary::after { content: '+'; color: var(--azul-text); font-size: 16px; }
 details[open] summary::after { content: '−'; }
